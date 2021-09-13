@@ -1,5 +1,9 @@
 public class PotatoeHead extends Character{
-    public PotatoeHead()
+   
+    /**
+     * Inputting the stringinto arraylist
+     */
+    public PotatoeHead() 
     {
         sections.add("             ");
         sections.add("    -----    ");
