@@ -1,46 +1,82 @@
 import java.util.ArrayList;
+
 public abstract class HousePlan {
-    protected ArrayList<String> materials;
-    protected ArrayList<String> features;
+    protected ArrayList<String> materials=new ArrayList<>();
+    protected ArrayList<String> features=new ArrayList<>();
     private int numRooms;
     private int numWindows;
     private int squareFeet;
+    protected  abstract void  setMaterials();
+    protected  abstract void setFeatures();
+    
+    /**
+     * Creating the houseplan constructor and setting the variables.
+     * @param numRooms the num of rooms
+     * @param numWindows the number of windows
+     * @param squareFeet the squarefeet
+     */
     public HousePlan(int numRooms, int numWindows,int squareFeet)
     {
         this.numRooms=numRooms;
         this.numWindows=numWindows;
         this.squareFeet=squareFeet;
+        setMaterials();
+        setFeatures();
     }
-    protected  abstract void  setMaterials();
-    protected  abstract void setFeatures();
+    
+    /**
+     * Method getting the materials
+     * @return materials
+     */
     public ArrayList<String> getMaterials(){
-        return this.materials;
+        return materials;
     }
+    
+    /**
+     * Method getting the features
+     * @return features
+     */
     public ArrayList<String> getFeatures(){
-        return this.features;
+        return features;
     }
+
+    /**
+     * Method getting the number of rooms
+     * @return numRooms
+     */
     public int getNumRooms(){
         return this.numRooms;
     }
+
+    /**
+     * Method getting the number of windows
+     * @return numWindows
+     */
     public int getNumWindows(){
         return this.numWindows;
     }
+    
+    /**
+     * Method getting the number of squareFeet
+     * @return squareFeet
+     */
     public int getSquareFeet(){
         return this.squareFeet;
     }
+    
+    /**
+     * Method concating the strings
+     * @return result
+     */
      public String toString(){
          String result="";
-         result += "Square Feet:"+squareFeet+ "\n";
-         result += "Room:" +numRooms+"\n";
-         result += "Windows:" +numWindows+ "\n";
+         result += "Square Feet:"+getSquareFeet()+ "\n";
+         result += "Room:" +getNumRooms()+"\n";
+         result += "Windows:" +getNumWindows()+ "\n";
          result += "Materials: \n";
-
-         for(String material : materials){
-            result +="     -"+material + "\n";
-         }
+         result += "     -"+getMaterials() + "\n";
          result += "\n Features: \n";
-         for(String feature : features){
-             result += "    -"+feature +"\n";
-         }
+         result += "    -"+getFeatures() +"\n";
          return result;
-}}
+        }
+}
