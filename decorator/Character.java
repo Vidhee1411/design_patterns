@@ -7,14 +7,6 @@ public class Character{
      */
     protected Character(){
         sections = new ArrayList<>();
-        sections.add("             ");
-        sections.add("    -----    ");
-        sections.add("   |     |   ");
-        sections.add("  /       \\ ");
-        sections.add(" |         |");
-        sections.add(" |         |  ");
-        sections.add("  \\       / ");
-        sections.add("   \\_____/  ");
         }
     
     /**
